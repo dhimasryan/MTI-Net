@@ -13,25 +13,28 @@ You can download our environmental setup at Environment Folder and use the follo
 conda env create -f environment.yml
 ```
 
-Please be noted, that the above environment is specifically used to run ```MOSA-Net_Cross_Domain.py, Generate_PS_Feature.py, Generate_end2end_Feature.py```. To generate Self Supervised Learning (SSL) feature, please use ```python 3.6``` and follow the instructions in following <a href="https://github.com/pytorch/fairseq" target="_blank">link</a> to deploy fairseq module.  
-### Feature Extaction ###
+Please be noted, that the above environment is specifically used to run ```MTI-Net.py```. To generate and fine-tuned Self Supervised Learning (SSL) feature, please use ```python 3.6``` and follow the instructions in following <a href="https://github.com/pytorch/fairseq" target="_blank">link</a> to deploy fairseq module.  
 
-For extracting cross-domain features, please use Generate_end2end_Feature.py, Generate_PS_Feature.py, Generate_SSL_Feature.py. When extracting SSL feature, please make sure that fairseq can be imported correctly. Please refer to this link for detail <a href="https://github.com/pytorch/fairseq" target="_blank">installation</a>. 
+### Fine-tuned SSL model and Extact SSL Feature ###
 
-Please follow the following format to make the input list.
+Please use the following code to fine-tuned SSL model:
 ```js
-PESQ score, STOI score, SDI score, filepath directory
+python FT_SSL_Feat.py
+```
+To extract the SSL feature, please use the following code:
+```js
+python Extract_FT_SSL.py
 ```
 
-### How to run the code ###
+### Train and Testing MTI-Net ###
 
 Please use following script to train the model:
 ```js
-python MOSA-Net_Cross_Domain.py --gpus <assigned GPU> --mode train
+python MTI-Net.py --gpus <assigned GPU> --mode train
 ```
 For, the testing stage, plase use the following script:
 ```js
-python MOSA-Net_Cross_Domain.py --gpus <assigned GPU> --mode test
+python MTI-Net.py --gpus <assigned GPU> --mode test
 ```
 
 ### Citation ###
