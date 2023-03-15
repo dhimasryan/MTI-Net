@@ -291,7 +291,7 @@ if __name__ == '__main__':
     ################################################################
     ######################### Testing data #########################
     Test_list_QI_score=ListRead('/Lists/TMHINT_QI_Test_with_Quality_Intelligibility_label.txt')
-    Test_list_wer_score=ListRead('/Lists/TMHINT_QI_Test_with_CER_label.txt')    
+    Test_list_wer_score=ListRead('/Lists/TMHINT_QI_Test_with_WER_label.txt')    
     Test_list_ssl=ListRead('/Lists/List_SSL_Test.txt')
     Num_testdata= len (Test_list_QI_score)
 
