@@ -95,7 +95,8 @@ def data_generator(file_list, file_list_ssl, list_stoi):
             
              random.Random(7).shuffle(file_list)
              random.Random(7).shuffle(file_list_ssl)
-
+             random.Random(7).shuffle(list_stoi)
+             
          yield  [noisy_LP, noisy_end2end, noisy_ssl], [wer, wer[0]*np.ones([1,final_len,1]), intell, intell[0]*np.ones([1,final_len,1]), stoi, stoi[0]*np.ones([1,final_len,1])]
 
 def BLSTM_CNN_with_ATT_cross_domain():
